@@ -26,8 +26,9 @@
     font-family: monospace;
     float: left;
     width: calc(100% - 203px);
+    line-height: 1.3;
 }
 
-.user.status span {
+.user .status span {
     color: green;
 }

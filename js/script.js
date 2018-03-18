@@ -22,12 +22,13 @@ $('#user1 .train-data').keydown(function(event) {
         count++;
         diff.shift();
         if (diff.length === training_string.length) train_data.push({input: diff, output: [1, 0, 0]}); else count--;
+        $('#user1 .status').html('Typing samples trained: ' + count + '/' + training_samples);
         diff = new Array();
         $(this).val('');
         if (count === training_samples) {
             count = 0;
             $(this).attr('disabled', true);
-            $('#user1 .status').html('<span>Neural network trained with user 1\'s typing signature</span>');
+            $('#user1 .status').append('<br><span>Neural network trained with user 1\'s typing signature</span>');
             $('#user2 .train-data').attr('disabled', false);
             $('#user2 .train-data').focus();
         }
@@ -44,11 +45,12 @@ $('#user2 .train-data').keydown(function(event) {
         count++;
         diff.shift();
         if (diff.length === training_string.length) train_data.push({input: diff, output: [0, 1, 0]}); else count--;
+        $('#user2 .status').html('Typing samples trained: ' + count + '/' + training_samples);
         diff = new Array();
         $(this).val('');
         if (count === training_samples) {
             count = 0;
-            $('#user2 .status').html('<span>Neural network trained with user 2\'s typing signature</span>');
+            $('#user2 .status').append('<br><span>Neural network trained with user 2\'s typing signature</span>');
             $(this).attr('disabled', true);
             $('#user3 .train-data').attr('disabled', false);
             $('#user3 .train-data').focus();
@@ -65,11 +67,12 @@ $('#user3 .train-data').keydown(function(event) {
         count++;
         diff.shift();
         if (diff.length === training_string.length) train_data.push({input: diff, output: [0, 0, 1]}); else count--;
+        $('#user3 .status').html('Typing samples trained: ' + count + '/' + training_samples);
         diff = new Array();
         $(this).val('');
         if (count === training_samples) {
             count = 0;
-            $('#user3 .status').html('<span>Neural network trained with user 3\'s typing signature</span>');
+            $('#user3 .status').append('<br><span>Neural network trained with user 3\'s typing signature</span>');
             $(this).attr('disabled', true);
             $('#userx .train-data').attr('disabled', false);
             $('#userx .train-data').focus();
