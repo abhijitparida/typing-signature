@@ -1,11 +1,17 @@
 var net = new brain.NeuralNetwork();
 
+// config
+var training_samples = 2;
+var training_string = 'hello world';
+
 // training data
 var train_data = new Array();
 
 var diff = new Array();
 var last = new Date().getTime();
 var count = 0;
+
+$('.train-data').attr('placeholder', 'Type \'' + training_string + '\' and press enter');
 
 $('#user1 .train-data').keydown(function(event) {
     var now = new Date().getTime();
@@ -15,10 +21,10 @@ $('#user1 .train-data').keydown(function(event) {
         event.preventDefault();
         count++;
         diff.shift();
-        if (diff.length == 11) train_data.push({input: diff, output: [1, 0, 0]}); else count--;
+        if (diff.length === training_string.length) train_data.push({input: diff, output: [1, 0, 0]}); else count--;
         diff = new Array();
         $(this).val('');
-        if (count === 5) {
+        if (count === training_samples) {
             count = 0;
             $(this).attr('disabled', true);
             $('#user1 .status').html('<span>Neural network trained with user 1\'s typing signature</span>');
@@ -37,10 +43,10 @@ $('#user2 .train-data').keydown(function(event) {
         event.preventDefault();
         count++;
         diff.shift();
-        if (diff.length == 11) train_data.push({input: diff, output: [0, 1, 0]}); else count--;
+        if (diff.length === training_string.length) train_data.push({input: diff, output: [0, 1, 0]}); else count--;
         diff = new Array();
         $(this).val('');
-        if (count === 5) {
+        if (count === training_samples) {
             count = 0;
             $('#user2 .status').html('<span>Neural network trained with user 2\'s typing signature</span>');
             $(this).attr('disabled', true);
@@ -58,10 +64,10 @@ $('#user3 .train-data').keydown(function(event) {
         event.preventDefault();
         count++;
         diff.shift();
-        if (diff.length == 11) train_data.push({input: diff, output: [0, 0, 1]}); else count--;
+        if (diff.length === training_string.length) train_data.push({input: diff, output: [0, 0, 1]}); else count--;
         diff = new Array();
         $(this).val('');
-        if (count === 5) {
+        if (count === training_samples) {
             count = 0;
             $('#user3 .status').html('<span>Neural network trained with user 3\'s typing signature</span>');
             $(this).attr('disabled', true);
