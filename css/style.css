@@ -1,32 +1,32 @@
 .user {
-    width: calc(50% - 102px);
-    min-height: 200px;
+    background-color: #ddd;
+    border-radius: 15px;
+    border: 1px solid #ddd;
     float: left;
     margin: 50px 0 0 50px;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    background-color: #ddd;
+    min-height: 200px;
+    width: calc(50% - 102px);
 }
 
 .user img {
     border-radius: 180px;
-    width: 128px;
-    padding: 25px;
     float: left;
+    padding: 25px;
+    width: 128px;
 }
 
 .user .train-data {
-    width: calc(100% - 203px);
-    height: 100px;
     float: left;
+    height: 100px;
     margin-top: 25px;
+    width: calc(100% - 203px);
 }
 
 .user .status {
-    font-family: monospace;
     float: left;
-    width: calc(100% - 203px);
+    font-family: monospace;
     line-height: 1.3;
+    width: calc(100% - 203px);
 }
 
 .user .status span {
