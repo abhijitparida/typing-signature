@@ -3,6 +3,7 @@ var net = new brain.NeuralNetwork();
 // config
 var training_samples = 2;
 var training_string = 'hello world';
+var threshold = 0.85;
 
 // training data
 var train_data = new Array();
@@ -98,12 +99,14 @@ $('#userx .train-data').keydown(function(event) {
 
         var result = net.run(diff);
         var max;
-        if (result[0] > result[1] && result[0] > result[2]) {
+        if (result[0] > threshold) {
             max = 1;
-        } else if (result[1] > result[0] && result[1] > result[2]) {
+        } else if (result[1] > threshold) {
             max = 2;
-        } else {
+        } else if (result[2] > threshold) {
             max = 3;
+        } else {
+            max = 'x';
         }
 
         $('#userx img').attr('src', 'img/' + max + '.png');
