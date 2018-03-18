@@ -73,7 +73,7 @@ $('#user3 .train-data').keydown(function(event) {
             $(this).attr('disabled', true);
             $('#userx .train-data').attr('disabled', false);
             $('#userx .train-data').focus();
-            console.log(net.train(train_data));
+            net.train(train_data);
         }
     }
 });
