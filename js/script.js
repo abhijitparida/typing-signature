@@ -12,6 +12,7 @@ var last = new Date().getTime();
 var count = 0;
 
 $('.train-data').attr('placeholder', 'Type \'' + training_string + '\' and press enter');
+$('#user1').css('background-color', 'blue');
 
 $('#user1 .train-data').keydown(function(event) {
     var now = new Date().getTime();
@@ -28,6 +29,8 @@ $('#user1 .train-data').keydown(function(event) {
         if (count === training_samples) {
             count = 0;
             $(this).attr('disabled', true);
+            $('#user1').css('background-color', '#ddd');
+            $('#user2').css('background-color', 'blue');
             $('#user1 .status').append('<br><span>Neural network trained with user 1\'s typing signature</span>');
             $('#user2 .train-data').attr('disabled', false);
             $('#user2 .train-data').focus();
@@ -50,8 +53,10 @@ $('#user2 .train-data').keydown(function(event) {
         $(this).val('');
         if (count === training_samples) {
             count = 0;
-            $('#user2 .status').append('<br><span>Neural network trained with user 2\'s typing signature</span>');
             $(this).attr('disabled', true);
+            $('#user2').css('background-color', '#ddd');
+            $('#user3').css('background-color', 'blue');
+            $('#user2 .status').append('<br><span>Neural network trained with user 2\'s typing signature</span>');
             $('#user3 .train-data').attr('disabled', false);
             $('#user3 .train-data').focus();
         }
@@ -72,8 +77,10 @@ $('#user3 .train-data').keydown(function(event) {
         $(this).val('');
         if (count === training_samples) {
             count = 0;
-            $('#user3 .status').append('<br><span>Neural network trained with user 3\'s typing signature</span>');
             $(this).attr('disabled', true);
+            $('#user3').css('background-color', '#ddd');
+            $('#userx').css('background-color', 'blue');
+            $('#user3 .status').append('<br><span>Neural network trained with user 3\'s typing signature</span>');
             $('#userx .train-data').attr('disabled', false);
             $('#userx .train-data').focus();
             net.train(train_data);
