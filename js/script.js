@@ -7,7 +7,7 @@ var diff = new Array();
 var last = new Date().getTime();
 var count = 0;
 
-$('#user1 textarea').keydown(function(event) {
+$('#user1 .train-data').keydown(function(event) {
     var now = new Date().getTime();
     diff.push((now - last)/1000);
     last = now;
@@ -21,15 +21,15 @@ $('#user1 textarea').keydown(function(event) {
         if (count === 5) {
             count = 0;
             $(this).attr('disabled', true);
-            $('#user1 p').html('<span>Neural network trained with user 1\'s typing signature</span>');
-            $('#user2 textarea').attr('disabled', false);
-            $('#user2 textarea').focus();
+            $('#user1 .status').html('<span>Neural network trained with user 1\'s typing signature</span>');
+            $('#user2 .train-data').attr('disabled', false);
+            $('#user2 .train-data').focus();
         }
     }
 });
 
 
-$('#user2 textarea').keydown(function(event) {
+$('#user2 .train-data').keydown(function(event) {
     var now = new Date().getTime();
     diff.push((now - last)/1000);
     last = now;
@@ -42,15 +42,15 @@ $('#user2 textarea').keydown(function(event) {
         $(this).val('');
         if (count === 5) {
             count = 0;
-            $('#user2 p').html('<span>Neural network trained with user 2\'s typing signature</span>');
+            $('#user2 .status').html('<span>Neural network trained with user 2\'s typing signature</span>');
             $(this).attr('disabled', true);
-            $('#user3 textarea').attr('disabled', false);
-            $('#user3 textarea').focus();
+            $('#user3 .train-data').attr('disabled', false);
+            $('#user3 .train-data').focus();
         }
     }
 });
 
-$('#user3 textarea').keydown(function(event) {
+$('#user3 .train-data').keydown(function(event) {
     var now = new Date().getTime();
     diff.push((now - last)/1000);
     last = now;
@@ -63,16 +63,16 @@ $('#user3 textarea').keydown(function(event) {
         $(this).val('');
         if (count === 5) {
             count = 0;
-            $('#user3 p').html('<span>Neural network trained with user 3\'s typing signature</span>');
+            $('#user3 .status').html('<span>Neural network trained with user 3\'s typing signature</span>');
             $(this).attr('disabled', true);
-            $('#userx textarea').attr('disabled', false);
-            $('#userx textarea').focus();
+            $('#userx .train-data').attr('disabled', false);
+            $('#userx .train-data').focus();
             console.log(net.train(train_data));
         }
     }
 });
 
-$('#userx textarea').keydown(function(event) {
+$('#userx .train-data').keydown(function(event) {
     var now = new Date().getTime();
     diff.push((now - last)/1000);
     last = now;
@@ -97,7 +97,7 @@ $('#userx textarea').keydown(function(event) {
         stats += "<br>User 2: " + (result[1].toFixed(3)*100) + "%";
         stats += "<br>User 3: " + (result[2].toFixed(3)*100) + "%";
 
-        $('#userx p').html(stats);
+        $('#userx .status').html(stats);
 
         diff = new Array();
         $(this).val('');

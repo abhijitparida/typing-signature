@@ -1,4 +1,4 @@
-section {
+.user {
     width: calc(50% - 102px);
     min-height: 200px;
     float: left;
@@ -8,26 +8,26 @@ section {
     background-color: #ddd;
 }
 
-img {
+.user img {
     border-radius: 180px;
     width: 128px;
     padding: 25px;
     float: left;
 }
 
-textarea {
+.user .train-data {
     width: calc(100% - 203px);
     height: 100px;
     float: left;
     margin-top: 25px;
 }
 
-p {
+.user .status {
     font-family: monospace;
     float: left;
     width: calc(100% - 203px);
 }
 
-p span {
+.user.status span {
     color: green;
 }
