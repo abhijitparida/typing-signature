@@ -15,7 +15,7 @@ $('#user1 .train-data').keydown(function(event) {
         event.preventDefault();
         count++;
         diff.shift();
-        if (diff.length == 9) train_data.push({input: diff, output: [1, 0, 0]}); else count--;
+        if (diff.length == 11) train_data.push({input: diff, output: [1, 0, 0]}); else count--;
         diff = new Array();
         $(this).val('');
         if (count === 5) {
@@ -37,7 +37,7 @@ $('#user2 .train-data').keydown(function(event) {
         event.preventDefault();
         count++;
         diff.shift();
-        if (diff.length == 9) train_data.push({input: diff, output: [0, 1, 0]}); else count--;
+        if (diff.length == 11) train_data.push({input: diff, output: [0, 1, 0]}); else count--;
         diff = new Array();
         $(this).val('');
         if (count === 5) {
@@ -58,7 +58,7 @@ $('#user3 .train-data').keydown(function(event) {
         event.preventDefault();
         count++;
         diff.shift();
-        if (diff.length == 9) train_data.push({input: diff, output: [0, 0, 1]}); else count--;
+        if (diff.length == 11) train_data.push({input: diff, output: [0, 0, 1]}); else count--;
         diff = new Array();
         $(this).val('');
         if (count === 5) {
