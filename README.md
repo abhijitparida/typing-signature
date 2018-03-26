@@ -1,7 +1,7 @@
 Typing Signature
 ================
 
-Proof of concept for the identification of users based on their typing pattern. Demo: https://swarajlaha.github.io/typing-signature/
+Proof of concept for the identification of users based on their typing pattern. Demo: https://abhijitparida.github.io/typing-signature/
 
 *Entry for the second round of GDG Hackathon 2017 by [Abhijit Parida](https://github.com/abhijitparida) and [Swaraj Laha](https://github.com/swarajlaha).*
 
