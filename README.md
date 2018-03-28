@@ -7,4 +7,4 @@ Proof of concept for the identification of users based on their typing pattern. 
 
 ## License
 
-[CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+[MIT](LICENSE)
