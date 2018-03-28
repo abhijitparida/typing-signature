@@ -1,0 +1,6 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Linguist overrides
+# https://github.com/github/linguist
+js/3rd-party/* linguist-vendored
