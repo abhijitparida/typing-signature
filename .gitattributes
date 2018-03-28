@@ -3,4 +3,4 @@
 
 # Linguist overrides
 # https://github.com/github/linguist
-js/3rd-party/* linguist-vendored
+*/3rd-party/* linguist-vendored=true
